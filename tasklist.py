@@ -10,5 +10,17 @@ def add_task():
     print(f"Aufgabe '{task}' wurde zur Liste hinzugefügt.")
 
 
-# testing the function
+
+# defining function for showing the task list
+def show_tasklist():
+    if not tasklist: # checks if list is empty
+        print("Deine Aufgabenliste ist leer.")
+    else:
+        print("Deine Aufgabenliste:")
+        for idx, task in enumerate(tasklist, start=1): # generates index starting from 1
+            print(f"{idx}. Aufgabe: {task['task']} - Fälligkeitsdatum: {task['due_date']}")
+
+# function test
 add_task()
+show_tasklist()
+
